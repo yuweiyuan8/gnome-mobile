@@ -49,9 +49,11 @@ jobs:
         uses: boredland/get-time-action@2.0.0
         with:
           format: 'YYYYMMDD'
+      -
+        uses: actions/checkout@v4
       - 
         id: image-build
-        uses: silime/phosh@master
+        uses: ./.github/actions/phosh
         with:
           arm-profiles-repo: https://github.com/silime/arm-profiles
           device: ${{ matrix.device }}
